@@ -6,9 +6,12 @@ namespace ProjectSubmission
     [TestClass]
     public class UnitTest1
     {
+        Login Login = new Login();
         [TestMethod]
         public void TestMethod1()
         {
+            Login.LoginWithValidUser(shouldClose:false);
         }
+
     }
 }
