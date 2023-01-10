@@ -7,24 +7,26 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using TOCI_III_Project;
 
 namespace ProjectSubmission
 {
-    public class Login
+    public class Login : BaseClass
     {
-        public void LoginWithValidUser(bool shouldClose)
+        By Email = By.ClassName("singinEmail");
+        By Password = By.ClassName("singinPassword");
+        By loginIn = By.CssSelector("#formsInnerid > div.signinFormArea.flex > form > div:nth-child(5) > button");
+        By checkBox = By.Name("policyAgreement");
+        By signOutBtn = By.ClassName("signoutBtn");
+        public void LoginWithValidUser()
         {
-            IWebDriver driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-            driver.Url = "https://demo.nopcommerce.com";
-            driver.FindElement(By.ClassName("ico-login")).Click();
-            driver.FindElement(By.Id("Email")).SendKeys("test2@gmail.com");
-            driver.FindElement(By.Name("Password")).SendKeys("pass123456789");
-            driver.FindElement(By.ClassName("login-button")).Click();
-            string actualText1 = driver.FindElement(By.ClassName("topic-block-title")).Text;
-            Assert.AreEqual("Welcome to our store", actualText1, "Assert Failed and Login not performed");
-            if (shouldClose)
-             driver.Close();
+            driver.FindElement(Email).SendKeys("sher@gmail.com");
+            driver.FindElement(Password).SendKeys("pass1234");
+            driver.FindElement(checkBox).Click();
+            driver.FindElement(loginIn).Click();
+            string actualtext1 = WaitForElement(signOutBtn).Text;
+            Assert.AreEqual("Sign Out", actualtext1, "assert failed and login not performed");
+
         }
     }
 }

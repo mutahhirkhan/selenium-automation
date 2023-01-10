@@ -10,7 +10,9 @@ namespace ProjectSubmission
         [TestMethod]
         public void TestMethod1()
         {
-            Login.LoginWithValidUser(shouldClose:false);
+            Login.SeleniumInit();
+            Login.LoginWithValidUser();
+            Login.CloseIt();
         }
 
     }
