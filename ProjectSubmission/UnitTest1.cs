@@ -9,6 +9,7 @@ namespace ProjectSubmission
         Login Login = new Login();
         FilterTestCase Filter = new FilterTestCase();
         AddTransaction transaction = new AddTransaction();
+        AmountTime AmountTimeInstance = new AmountTime();
 
         [TestMethod]
         public void TestMethod1()
@@ -62,5 +63,13 @@ namespace ProjectSubmission
             Login.LoginWithValidUser();
             transaction.AddTransactions();
         }
+        [TestMethod]
+        public void TestMethod8()
+        {
+            Login.SeleniumInit();
+            Login.LoginWithValidUser();
+            AmountTimeInstance.TransactionsCountCheck();
+        }
+
     }
 }
