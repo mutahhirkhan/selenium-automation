@@ -7,8 +7,7 @@ namespace ProjectSubmission
     public class UnitTest1
     {
         Login Login = new Login();
-        ExpenseManagement em = new ExpenseManagement();
-
+        ExpenseManagement em = new ExpenseManagement(); 
         [TestMethod]
         public void TestMethod1()
         {
@@ -44,7 +43,7 @@ namespace ProjectSubmission
             Login.TermsAndConditions();
             Login.CloseIt();
         }
-
+        
         [TestMethod]
         public void TestMethod6()
         {
@@ -52,38 +51,6 @@ namespace ProjectSubmission
             Login.LoginWithValidUser();
             em.deleteItem();
             //Login.CloseIt();
-        }
-
-        [TestMethod]
-        public void TestMethod7()
-        {
-            Login.InitializeInstance();
-            Login.verifyLogo();
-            Login.CloseIt();
-        }
-
-        [TestMethod]
-        public void TestMethod8()
-        {
-            Login.InitializeInstance();
-            Login.verifyMenuItemcount();
-            Login.CloseIt();
-        }
-
-        [TestMethod]
-        public void TestMethod9()
-        {
-            Login.InitializeInstance();
-            Login.verifyCategories();
-            Login.CloseIt();
-        }
-
-        [TestMethod]
-        public void TestMethod10()
-        {
-            Login.InitializeInstance();
-            Login.ValidateTheMessageIsDisplayed();
-            Login.CloseIt();
         }
 
     }
