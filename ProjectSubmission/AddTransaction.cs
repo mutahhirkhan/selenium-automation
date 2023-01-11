@@ -13,15 +13,18 @@ namespace ProjectSubmission
     public class AddTransaction : BaseClass {
         By Title = By.ClassName("title");
         By Cost = By.ClassName("cost");
-        SelectElement dropDown = new SelectElement(driver.FindElement(By.ClassName("transactionType")));
-        By DateCalendar = By.ClassName("transactionAt");
+        SelectElement dropDown;
+        //By DateCalendar = By.ClassName("transactionAt");
 
         public void AddTransactions()
         {
             driver.FindElement(Title).SendKeys("cap");
             driver.FindElement(Cost).SendKeys("20");
-            dropDown.SelectByValue("expanse");
-            driver.FindElement(DateCalendar).Click();
+            driver.FindElement(By.ClassName("transactionType")).Click();
+            dropDown = new SelectElement(driver.FindElement(By.XPath("/html/body/div/div[3]/form/select")));
+            dropDown.SelectByValue("income");
+            //driver.FindElement(By.ClassName("transactionType")).Click();
+            //driver.FindElement(DateCalendar).Click();
         }
     }
 

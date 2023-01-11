@@ -7,9 +7,9 @@ namespace ProjectSubmission
     public class UnitTest1
     {
         Login Login = new Login();
-        //ExpenseManagement em = new ExpenseManagement();
         FilterTestCase Filter = new FilterTestCase();
         AddTransaction transaction = new AddTransaction();
+
         [TestMethod]
         public void TestMethod1()
         {
