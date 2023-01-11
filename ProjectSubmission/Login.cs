@@ -9,6 +9,11 @@ using OpenQA.Selenium;
 //using System.Threading.Tasks;
 using TOCI_III_Project;
 using System.Threading;
+using OpenQA.Selenium.Chrome;
+using System;
+using System.Collections.ObjectModel;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace ProjectSubmission
 {
@@ -27,7 +32,6 @@ namespace ProjectSubmission
             driver.FindElement(loginIn).Click();
             string actualtext1 = WaitForElement(signOutBtn).Text;
             Assert.AreEqual("Sign Out", actualtext1, "assert failed and login not performed");
-
         }
         public void InvalidUserWithEmailAndPassword()
         {
@@ -75,5 +79,32 @@ namespace ProjectSubmission
 
         }
 
+        public void verifyLogo()
+        {
+            driver.Navigate().GoToUrl("https://www.saucedemo.com/");
+            Assert.IsTrue(driver.FindElement(By.ClassName("login_logo")).Displayed);
+        }
+        public void verifyMenuItemcount()
+        {
+            driver.Navigate().GoToUrl("https://www.orangehrm.com/");
+            ReadOnlyCollection<IWebElement> menuItem = driver.FindElements(By.XPath("//ul[contains(@class,'navbar-nav me-auto mb-2 mb-lg-0 web-menu')]/li"));
+            Assert.AreEqual(menuItem.Count, 5);
+        }
+        public void verifyCategories()
+        {
+            driver.Navigate().GoToUrl("https://demo.nopcommerce.com/");
+          //IWebElement contactUsPageHeader = driver.FindElement(By.ClassName("sublist first-level"));
+          //Assert.IsTrue(contactUsPageHeader.Text.Contains("Replace your device lab and VMs with any of these plans"));
+            ReadOnlyCollection<IWebElement> category = driver.FindElements(By.XPath("//ul[contains(@class,'top-menu notmobile')]/li"));
+            Assert.AreEqual(category.Count, 7);
+        }
+
+        public void ValidateTheMessageIsDisplayed()
+        {
+            driver.Navigate().GoToUrl("https://www.lambdatest.com/selenium-playground/simple-form-demo");
+            driver.FindElement(By.Id("user-message")).SendKeys("LambdaTest rules");
+            driver.FindElement(By.Id("showInput")).Click();
+            Assert.IsTrue(driver.FindElement(By.Id("message")).Text.Equals("LambdaTest rules"), "The expected message was not displayed.");
+        } 
     }
 }
