@@ -24,44 +24,30 @@ namespace ProjectSubmission
         By CostMinToMax = By.CssSelector("body > div > div.details > div.sortingDiv > select > option:nth-child(3)");
         By DateNewToOld = By.CssSelector("body > div > div.details > div.sortingDiv > select > option:nth-child(4)");
         By DateOldToNew = By.CssSelector("body > div > div.details > div.sortingDiv > select > option:nth-child(5)");
-
-
-        // Create object of the Select class
-        //SelectElement dropDown = new SelectElement(driver.findElement(By.xpath("//*[@id='oldSelectMenu']")));
-        //dropDown.SelectByValue(dayOfTheWeek);
-
-        // Select the option with value "6"
-        //se.selectByValue("6");
         SelectElement dropDown;
 
         public void SelectOpen()
         {
             driver.FindElement(FilterElement).Click();
             dropDown = new SelectElement(driver.FindElement(By.Name("sorting")));
-
         }
         public void CostMaxiToMin()
         {
-            //WaitForElement(CostMaxToMin).Click();
             Thread.Sleep(3000);
             dropDown.SelectByValue("costDowngrade");
-
+            driver.FindElement(FilterElement).Click();
         }
         public void CostMinToMaxi()
         {
-            //driver.FindElement(CostMinToMax).Click();
             dropDown.SelectByValue("costUpgrade");
-
         }
         public void NewToOld()
         {
             driver.FindElement(DateNewToOld).Click();
-
         }
         public void OldToNew()
         {
             driver.FindElement(DateOldToNew).Click();
-
         }
     }
 }
