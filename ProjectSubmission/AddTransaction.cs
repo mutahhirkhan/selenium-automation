@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using OpenQA.Selenium.DevTools.V106.Profiler;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -14,7 +15,7 @@ namespace ProjectSubmission
         By Title = By.ClassName("title");
         By Cost = By.ClassName("cost");
         SelectElement dropDown;
-        //By DateCalendar = By.ClassName("transactionAt");
+        By DateCalendar = By.ClassName("transactionAt");
 
         public void AddTransactions()
         {
@@ -23,8 +24,25 @@ namespace ProjectSubmission
             driver.FindElement(By.ClassName("transactionType")).Click();
             dropDown = new SelectElement(driver.FindElement(By.XPath("/html/body/div/div[3]/form/select")));
             dropDown.SelectByValue("income");
-            //driver.FindElement(By.ClassName("transactionType")).Click();
-            //driver.FindElement(DateCalendar).Click();
+            driver.FindElement(By.ClassName("transactionType")).Click();
+            driver.FindElement(DateCalendar).SendKeys("09112023");
+            int beforeCount = getCount();
+            driver.FindElement(By.ClassName("addBtn")).Click();
+            int afterCount = getCount();
+            if (afterCount>=beforeCount)
+            {
+                Console.WriteLine("Item is added");
+            }
+            else
+            {
+                Console.WriteLine("Item is not added");
+            }
+        }
+
+        int getCount()
+        {
+            int count = WaitForElement(By.ClassName("transactionList")).FindElements(By.ClassName("transactionListItems")).Count();
+            return count;
         }
     }
 
