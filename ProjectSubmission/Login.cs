@@ -65,15 +65,13 @@ namespace ProjectSubmission
         }
         public void TermsAndConditions()
         {
-            driver.FindElement(Email).SendKeys("daniyal@gmailcom");
+            driver.FindElement(Email).SendKeys("daniyal@gmail.com");
             driver.FindElement(Password).SendKeys("abcde1234");
             driver.FindElement(loginIn).Click();
             Thread.Sleep(3000);
             string actualtext1 = driver.SwitchTo().Alert().Text;
             driver.SwitchTo().Alert().Accept();
-            Assert.AreEqual("Please make sure that you agree to the Terms and Conditions.", actualtext1, "assert failed and login not performed");
-
+            Assert.AreEqual("Please make sure that you agree to the Terms and Conditions", actualtext1, "assert failed and login not performed");
         }
-
     }
 }

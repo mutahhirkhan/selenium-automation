@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="BaseClass.cs" />
     <Compile Include="ExpenseManagement.cs" />
+    <Compile Include="FilterTestCase.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
