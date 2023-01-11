@@ -14,6 +14,10 @@ namespace ProjectSubmission
 {
     public class Login : BaseClass
     {
+        By SignUpBt = By.Name("signupBtn");
+        By RegisterUserName = By.ClassName("signupName");
+        By RegisterEmail = By.ClassName("signupEmail");
+        By RegisterPassword = By.ClassName("signupPassword");
         By Email = By.ClassName("singinEmail");
         By Password = By.ClassName("singinPassword");
         By loginIn = By.CssSelector("#formsInnerid > div.signinFormArea.flex > form > div:nth-child(5) > button");
@@ -27,7 +31,6 @@ namespace ProjectSubmission
             driver.FindElement(loginIn).Click();
             string actualtext1 = WaitForElement(signOutBtn).Text;
             Assert.AreEqual("Sign Out", actualtext1, "assert failed and login not performed");
-
         }
         public void InvalidUserWithEmailAndPassword()
         {
@@ -73,5 +76,8 @@ namespace ProjectSubmission
             driver.SwitchTo().Alert().Accept();
             Assert.AreEqual("Please make sure that you agree to the Terms and Conditions", actualtext1, "assert failed and login not performed");
         }
+        //public void RegisterUser() {
+
+        //}
     }
 }

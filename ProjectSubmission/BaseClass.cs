@@ -22,8 +22,8 @@ namespace TOCI_III_Project
             driver.Manage().Window.Maximize();
             driver.Url = EntryPoint_Url;
             return driver;
-        }
-
+        }       
+     
         public void CloseIt()
         {
             driver.Close();
