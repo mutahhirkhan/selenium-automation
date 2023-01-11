@@ -9,6 +9,7 @@ namespace ProjectSubmission
         Login Login = new Login();
         ExpenseManagement em = new ExpenseManagement();
         FilterTestCase filter = new FilterTestCase();
+
         [TestMethod]
         public void TestMethod1()
         {
@@ -42,15 +43,6 @@ namespace ProjectSubmission
         {
             Login.SeleniumInit();
             Login.TermsAndConditions();
-            Login.CloseIt();
-        }
-        [TestMethod]
-
-        public void TestMethod6()
-        {
-            Login.SeleniumInit();
-            Login.LoginWithValidUser();
-            filter.SelectOption();
             Login.CloseIt();
         }
     }

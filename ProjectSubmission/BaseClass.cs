@@ -22,6 +22,12 @@ namespace TOCI_III_Project
             driver.Manage().Window.Maximize();
             driver.Url = EntryPoint_Url;
             return driver;
+        }       
+        public void InitializeInstance()
+        {
+            IWebDriver chromeDriver = new ChromeDriver();
+            driver = chromeDriver;
+            driver.Manage().Window.Maximize();
         }
 
         public void CloseIt()

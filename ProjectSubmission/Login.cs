@@ -9,6 +9,11 @@ using OpenQA.Selenium;
 //using System.Threading.Tasks;
 using TOCI_III_Project;
 using System.Threading;
+using OpenQA.Selenium.Chrome;
+using System;
+using System.Collections.ObjectModel;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace ProjectSubmission
 {
@@ -27,7 +32,6 @@ namespace ProjectSubmission
             driver.FindElement(loginIn).Click();
             string actualtext1 = WaitForElement(signOutBtn).Text;
             Assert.AreEqual("Sign Out", actualtext1, "assert failed and login not performed");
-
         }
         public void InvalidUserWithEmailAndPassword()
         {
