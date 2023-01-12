@@ -99,8 +99,8 @@ namespace ProjectSubmission
         public void TestMethod11()
         {
             Login.SeleniumInit();
-            Login.LoginWithValidUser("daniyal@gmail.com", "abcde1234");
-            Transactions.AddTransactions("pen","200","expanse", "08112023");
+            Login.LoginWithValidUser("omer@gmail.com", "pass12345");
+            Transactions.AddTransactions("opp","2600","expanse", "05122023");
         }
         [TestMethod]
         public void TestMethod12()
@@ -108,6 +108,14 @@ namespace ProjectSubmission
             Login.SeleniumInit();
             Login.LoginWithValidUser("daniyal@gmail.com", "abcde1234");
             AmountTimeInstance.TransactionsCountCheck();
+        }
+        [TestMethod]
+        public void TestMethod13()
+        {
+            Login.SeleniumInit();
+            Login.LoginWithValidUser("daniyal@gmail.com", "abcde1234");
+            Transactions.TransactionDelete();
+            Login.CloseIt();
         }
 
     }

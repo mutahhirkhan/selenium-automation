@@ -17,6 +17,7 @@ namespace ProjectSubmission
         By Cost = By.ClassName("cost");
         SelectElement dropDown;
         By DateCalendar = By.ClassName("transactionAt");
+        By DeleteButton = By.XPath("/html/body/div/div[4]/div[1]/div[5]/button/span/span[2]/div/span");
 
         public void AddTransactions(string productTitle, string productCost, string transctionType, string dateSelect)
         {
@@ -27,10 +28,13 @@ namespace ProjectSubmission
             dropDown.SelectByValue(transctionType);
             driver.FindElement(By.ClassName("transactionType")).Click();
             driver.FindElement(DateCalendar).SendKeys(dateSelect);
+            Thread.Sleep(2000);
             int beforeCount = getCount();
+            Thread.Sleep(2000);
             driver.FindElement(By.ClassName("addBtn")).Click();
+            Thread.Sleep(2000);
             int afterCount = getCount();
-            if (afterCount>=beforeCount)
+            if (afterCount>beforeCount)
             {
                 Console.WriteLine("Item is added");
             }
@@ -38,7 +42,24 @@ namespace ProjectSubmission
             {
                 Console.WriteLine("Item is not added");
             }
-            Thread.Sleep(3000);
+        }
+
+        public void TransactionDelete()
+        {
+            Thread.Sleep(2000);
+            int beforeDelete = getCount();
+            Thread.Sleep(2000);
+            driver.FindElement(DeleteButton).Click();
+            Thread.Sleep(2000);
+            int afterDelete = getCount();
+            if (afterDelete < beforeDelete)
+            {
+                Console.WriteLine("Item is deleted succefully");
+            }
+            else
+            {
+                Console.WriteLine("Item is not deleted");
+            }
         }
 
         int getCount()
