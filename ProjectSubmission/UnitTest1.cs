@@ -100,7 +100,7 @@ namespace ProjectSubmission
         {
             Login.SeleniumInit();
             Login.LoginWithValidUser("daniyal@gmail.com", "abcde1234");
-            Transactions.AddTransactions();
+            Transactions.AddTransactions("pen","200","expanse", "08112023");
         }
         [TestMethod]
         public void TestMethod12()
