@@ -76,8 +76,9 @@ namespace ProjectSubmission
             driver.SwitchTo().Alert().Accept();
             Assert.AreEqual("Please make sure that you agree to the Terms and Conditions", actualtext1, "assert failed and login not performed");
         }
-        //public void RegisterUser() {
-
-        //}
+        public void RegisterUser()
+        {
+            driver.FindElement(SignUpBt).Click();
+        }
     }
 }

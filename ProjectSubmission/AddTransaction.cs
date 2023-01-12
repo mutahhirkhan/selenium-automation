@@ -19,8 +19,8 @@ namespace ProjectSubmission
 
         public void AddTransactions()
         {
-            driver.FindElement(Title).SendKeys("cap");
-            driver.FindElement(Cost).SendKeys("20");
+            driver.FindElement(Title).SendKeys("joopp");
+            driver.FindElement(Cost).SendKeys("10000");
             driver.FindElement(By.ClassName("transactionType")).Click();
             dropDown = new SelectElement(driver.FindElement(By.XPath("/html/body/div/div[3]/form/select")));
             dropDown.SelectByValue("income");

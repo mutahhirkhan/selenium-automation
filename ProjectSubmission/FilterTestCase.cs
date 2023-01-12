@@ -37,7 +37,7 @@ namespace ProjectSubmission
             dropDown.SelectByValue("dateDowngrade");
             driver.FindElement(FilterElement).Click();
         }
-        public void OldToNewdate()
+        public void OldToNewDate()
         {
             Thread.Sleep(3000);
             dropDown.SelectByValue("dateUpgrade");

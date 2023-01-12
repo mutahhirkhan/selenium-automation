@@ -34,6 +34,7 @@ namespace ProjectSubmission
             Login.InvalidUserWithPassword();
             Login.CloseIt();
         }
+
         [TestMethod]
         public void TestMethod4()
         {
@@ -41,6 +42,7 @@ namespace ProjectSubmission
             Login.InvalidEmailFormatted();
             Login.CloseIt();
         }
+
         [TestMethod]
         public void TestMethod5()
         {
@@ -53,9 +55,8 @@ namespace ProjectSubmission
         public void TestMethod6()
         {
             Login.SeleniumInit();
-            Login.LoginWithValidUser();
-            Filter.SelectOpen();
-            Filter.CostMaxiToMin(); //For maximum to minimum cost
+            Login.RegisterUser();
+            Login.CloseIt();
         }
 
         [TestMethod]
@@ -64,7 +65,7 @@ namespace ProjectSubmission
             Login.SeleniumInit();
             Login.LoginWithValidUser();
             Filter.SelectOpen();
-            Filter.CostMinToMaxi(); // Form minimum to maximum cost
+            Filter.CostMaxiToMin(); //For maximum to minimum cost
         }
 
         [TestMethod]
@@ -73,7 +74,7 @@ namespace ProjectSubmission
             Login.SeleniumInit();
             Login.LoginWithValidUser();
             Filter.SelectOpen();
-            Filter.OldToNewdate(); //For old to new date filter
+            Filter.CostMinToMaxi(); // Form minimum to maximum cost
         }
 
         [TestMethod]
@@ -82,7 +83,31 @@ namespace ProjectSubmission
             Login.SeleniumInit();
             Login.LoginWithValidUser();
             Filter.SelectOpen();
+            Filter.OldToNewDate(); //For old to new date filter
+        }
+
+        [TestMethod]
+        public void TestMethod10()
+        {
+            Login.SeleniumInit();
+            Login.LoginWithValidUser();
+            Filter.SelectOpen();
             Filter.NewToOldDate(); // for new to old date filter 
+        }
+
+        [TestMethod]
+        public void TestMethod11()
+        {
+            Login.SeleniumInit();
+            Login.LoginWithValidUser();
+            Transactions.AddTransactions();
+        }
+        [TestMethod]
+        public void TestMethod12()
+        {
+            Login.SeleniumInit();
+            Login.LoginWithValidUser();
+            AmountTimeInstance.TransactionsCountCheck();
         }
 
     }
