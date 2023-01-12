@@ -8,7 +8,7 @@ namespace ProjectSubmission
     {
         Login Login = new Login();
         FilterTestCase Filter = new FilterTestCase();
-        AddTransaction Transactions = new AddTransaction();
+        TransactionsDashboard Transactions = new TransactionsDashboard();
         AmountTime AmountTimeInstance = new AmountTime();
 
         [TestMethod]

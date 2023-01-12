@@ -63,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseClass.cs" />
-    <Compile Include="AddTransaction.cs" />
+    <Compile Include="TransactionsDashboard.cs" />
     <Compile Include="AmountTime.cs" />
     <Compile Include="ExpenseManagement.cs" />
     <Compile Include="FilterTestCase.cs" />

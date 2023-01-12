@@ -11,7 +11,7 @@ using TOCI_III_Project;
 
 namespace ProjectSubmission
 {
-    public class AddTransaction : BaseClass {
+    public class TransactionsDashboard : BaseClass {
         By Title = By.ClassName("title");
         By Cost = By.ClassName("cost");
         SelectElement dropDown;
@@ -19,13 +19,13 @@ namespace ProjectSubmission
 
         public void AddTransactions()
         {
-            driver.FindElement(Title).SendKeys("joopp");
-            driver.FindElement(Cost).SendKeys("10000");
+            driver.FindElement(Title).SendKeys("car");
+            driver.FindElement(Cost).SendKeys("20000");
             driver.FindElement(By.ClassName("transactionType")).Click();
             dropDown = new SelectElement(driver.FindElement(By.XPath("/html/body/div/div[3]/form/select")));
-            dropDown.SelectByValue("income");
+            dropDown.SelectByValue("expanse");
             driver.FindElement(By.ClassName("transactionType")).Click();
-            driver.FindElement(DateCalendar).SendKeys("09112023");
+            driver.FindElement(DateCalendar).SendKeys("08112023");
             int beforeCount = getCount();
             driver.FindElement(By.ClassName("addBtn")).Click();
             int afterCount = getCount();
