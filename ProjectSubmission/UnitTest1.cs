@@ -15,7 +15,7 @@ namespace ProjectSubmission
         public void TestMethod1()
         {
             Login.SeleniumInit();
-            Login.LoginWithValidUser();
+            Login.LoginWithValidUser("daniyal@gmail.com", "abcde1234");
             Login.CloseIt();
         }
 
@@ -23,7 +23,7 @@ namespace ProjectSubmission
         public void TestMethod2()
         {
             Login.SeleniumInit();
-            Login.InvalidUserWithEmailAndPassword();
+            Login.InvalidUserWithEmailAndPassword("shair@gmail.com", "random1232");
             Login.CloseIt();
         }
 
@@ -31,7 +31,7 @@ namespace ProjectSubmission
         public void TestMetod3()
         {
             Login.SeleniumInit();
-            Login.InvalidUserWithPassword();
+            Login.InvalidUserWithPassword("ali99shair@gmail.com", "random1232");
             Login.CloseIt();
         }
 
@@ -39,7 +39,7 @@ namespace ProjectSubmission
         public void TestMethod4()
         {
             Login.SeleniumInit();
-            Login.InvalidEmailFormatted();
+            Login.InvalidEmailFormatted("ssss","pass12345");
             Login.CloseIt();
         }
 
@@ -47,7 +47,7 @@ namespace ProjectSubmission
         public void TestMethod5()
         {
             Login.SeleniumInit();
-            Login.TermsAndConditions();
+            Login.TermsAndConditions("daniyal@gmail.com", "abcde1234");
             Login.CloseIt();
         }
 
@@ -55,7 +55,7 @@ namespace ProjectSubmission
         public void TestMethod6()
         {
             Login.SeleniumInit();
-            Login.RegisterUser();
+            Login.RegisterUser("rohan","rohan@gmail.com","rohan123456");
             Login.CloseIt();
         }
 
@@ -63,7 +63,7 @@ namespace ProjectSubmission
         public void TestMethod7()
         {
             Login.SeleniumInit();
-            Login.LoginWithValidUser();
+            Login.LoginWithValidUser("daniyal@gmail.com", "abcde1234");
             Filter.SelectOpen();
             Filter.CostMaxiToMin(); //For maximum to minimum cost
         }
@@ -72,7 +72,7 @@ namespace ProjectSubmission
         public void TestMethod8()
         {
             Login.SeleniumInit();
-            Login.LoginWithValidUser();
+            Login.LoginWithValidUser("daniyal@gmail.com", "abcde1234");
             Filter.SelectOpen();
             Filter.CostMinToMaxi(); // Form minimum to maximum cost
         }
@@ -81,7 +81,7 @@ namespace ProjectSubmission
         public void TestMethod9()
         {
             Login.SeleniumInit();
-            Login.LoginWithValidUser();
+            Login.LoginWithValidUser("daniyal@gmail.com", "abcde1234");
             Filter.SelectOpen();
             Filter.OldToNewDate(); //For old to new date filter
         }
@@ -90,7 +90,7 @@ namespace ProjectSubmission
         public void TestMethod10()
         {
             Login.SeleniumInit();
-            Login.LoginWithValidUser();
+            Login.LoginWithValidUser("daniyal@gmail.com", "abcde1234");
             Filter.SelectOpen();
             Filter.NewToOldDate(); // for new to old date filter 
         }
@@ -99,14 +99,14 @@ namespace ProjectSubmission
         public void TestMethod11()
         {
             Login.SeleniumInit();
-            Login.LoginWithValidUser();
+            Login.LoginWithValidUser("daniyal@gmail.com", "abcde1234");
             Transactions.AddTransactions();
         }
         [TestMethod]
         public void TestMethod12()
         {
             Login.SeleniumInit();
-            Login.LoginWithValidUser();
+            Login.LoginWithValidUser("daniyal@gmail.com", "abcde1234");
             AmountTimeInstance.TransactionsCountCheck();
         }
 
