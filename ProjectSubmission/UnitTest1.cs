@@ -8,7 +8,7 @@ namespace ProjectSubmission
     {
         Login Login = new Login();
         FilterTestCase Filter = new FilterTestCase();
-        AddTransaction transaction = new AddTransaction();
+        AddTransaction Transactions = new AddTransaction();
         AmountTime AmountTimeInstance = new AmountTime();
 
         [TestMethod]
@@ -18,6 +18,7 @@ namespace ProjectSubmission
             Login.LoginWithValidUser();
             Login.CloseIt();
         }
+
         [TestMethod]
         public void TestMethod2()
         {
@@ -25,6 +26,7 @@ namespace ProjectSubmission
             Login.InvalidUserWithEmailAndPassword();
             Login.CloseIt();
         }
+
         [TestMethod]
         public void TestMetod3()
         {
@@ -46,29 +48,41 @@ namespace ProjectSubmission
             Login.TermsAndConditions();
             Login.CloseIt();
         }
-        [TestMethod]
 
+        [TestMethod]
         public void TestMethod6()
         {
             Login.SeleniumInit();
             Login.LoginWithValidUser();
             Filter.SelectOpen();
-            Filter.CostMaxiToMin();
-            //Login.CloseIt();
+            Filter.CostMaxiToMin(); //For maximum to minimum cost
         }
+
         [TestMethod]
         public void TestMethod7()
         {
             Login.SeleniumInit();
             Login.LoginWithValidUser();
-            transaction.AddTransactions();
+            Filter.SelectOpen();
+            Filter.CostMinToMaxi(); // Form minimum to maximum cost
         }
+
         [TestMethod]
         public void TestMethod8()
         {
             Login.SeleniumInit();
             Login.LoginWithValidUser();
-            AmountTimeInstance.TransactionsCountCheck();
+            Filter.SelectOpen();
+            Filter.OldToNewdate(); //For old to new date filter
+        }
+
+        [TestMethod]
+        public void TestMethod9()
+        {
+            Login.SeleniumInit();
+            Login.LoginWithValidUser();
+            Filter.SelectOpen();
+            Filter.NewToOldDate(); // for new to old date filter 
         }
 
     }
