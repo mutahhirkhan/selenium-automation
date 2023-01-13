@@ -37,10 +37,10 @@ namespace ProjectSubmission
             int[] arr = new int[count];
             for (int i = 0; i < count; i++)
             {
-                arr[i] = (int)long.Parse(driver.FindElement(By.XPath("/html/body/div/div[4]/div[" + (i + 1) + "]/div["+ (isCost ? 3 : 4) + "]/p")).GetAttribute("value"));
-                Console.WriteLine("time "+i+" "+arr[i]);
-            }    
-            Assert.AreEqual(arr.Length, 3, "length mistached");
+                arr[i] = (int)long.Parse(driver.FindElement(By.XPath("/html/body/div/div[4]/div[" + (i + 1) + "]/div[" + (isCost ? 3 : 4) + "]/p")).GetAttribute("value"));
+                Console.WriteLine("time " + i + " " + arr[i]);
+            }
+            Assert.AreEqual(arr.Length, 9, "length mistached");
             if (isMaxToMin)
             {
                 for (int i = 1; i < arr.Length; i++)

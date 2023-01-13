@@ -55,7 +55,7 @@ namespace ProjectSubmission
         public void TestMethod6()
         {
             Login.SeleniumInit();
-            Login.RegisterUser("rohan","rohan@gmail.com","rohan123456");
+            Login.RegisterUser("saif","saif@gmail.com","saif123456");
             Login.CloseIt();
         }
 
