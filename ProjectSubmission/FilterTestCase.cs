@@ -31,38 +31,12 @@ namespace ProjectSubmission
             return 0;
         }
 
-        //public bool ValidateCostOrder(bool isMaxToMin)
-        //{
-        //    int count = getTransactionsCount();
-        //    int[] arr = new int[count];
-        //    for (int i = 0; i < count; i++)
-        //    {
-        //        arr[i] = (int)long.Parse(driver.FindElement(By.XPath("/html/body/div/div[4]/div["+(i+1)+"]/div[3]/p")).GetAttribute("value"));
-        //    }
-        //    Assert.AreEqual(arr.Length, 3, "length mistached");
-        //    if(isMaxToMin)
-        //    {
-        //        for (int i = 1; i < arr.Length; i++)
-        //            if (arr[i - 1] > arr[i]) return true;
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        for (int i = 1; i < arr.Length; i++)
-        //            if (arr[i - 1] < arr[i]) return true;
-        //        return false;
-
-        //    }
-        //}
-
         public bool ValidateCostAndDateOrder(bool isMaxToMin, bool isCost)
         {
             int count = GetTransactionsCount();
             int[] arr = new int[count];
             for (int i = 0; i < count; i++)
             {
-                ///html/body/div/div[4]/div[3]/div[4]/p
-                ///html/body/div/div[4]/div[4]/div[4]/p
                 arr[i] = (int)long.Parse(driver.FindElement(By.XPath("/html/body/div/div[4]/div[" + (i + 1) + "]/div["+ (isCost ? 3 : 4) + "]/p")).GetAttribute("value"));
                 Console.WriteLine("time "+i+" "+arr[i]);
             }    
